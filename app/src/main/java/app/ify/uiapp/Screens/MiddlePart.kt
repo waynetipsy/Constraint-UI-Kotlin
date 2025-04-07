@@ -13,7 +13,7 @@ import java.lang.reflect.Modifier
 
 @Composable
 fun WelcomeText(modifier: androidx.compose.ui.Modifier){
-    Text(text = "Welcome Back",
+    Text(text = "Welcome Back!",
         fontSize = 32.sp,
         fontWeight = FontWeight.Bold,
         color = Color.White,

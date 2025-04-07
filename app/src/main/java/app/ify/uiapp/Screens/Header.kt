@@ -17,7 +17,7 @@ fun ProfileImage(modifier: Modifier) {
         id = R.drawable.user),
       contentDescription = "Profile",
         modifier = modifier.padding(start = 16.dp)
-            .clip(CircleShape).size(30.dp)
+            .clip(CircleShape).size(27.dp)
     )
 }
 
