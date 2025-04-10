@@ -17,7 +17,13 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             UIAppTheme {
-                ConstraintLayoutScreen()
+                ConstraintLayoutScreen(Modifier.fillMaxSize()) {
+                    Text(
+                        text = "Lesson Card",
+                        color = Color.Gray,
+                        modifier = Modifier.const
+                    )
+                }
             }
         }
     }

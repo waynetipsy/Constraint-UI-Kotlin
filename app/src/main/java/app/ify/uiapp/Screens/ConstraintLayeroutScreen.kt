@@ -13,7 +13,7 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 
 @Composable
-fun ConstraintLayoutScreen() {
+fun ConstraintLayoutScreen(modifier: Modifier, function: @Composable () -> Unit) {
     ConstraintLayout (
         modifier = Modifier
             .background(MaterialTheme.colorScheme.surface)
@@ -30,7 +30,7 @@ fun ConstraintLayoutScreen() {
         ) = createRefs()
 
         // createRef() can hold up to 16 element
-        val(latestLessonsText, seeAllText) = createRefs()
+        val(latestLessonsText, seeAllText,lessonCard ) = createRefs()
 
         // GuideLine
         val horizontalGuideline1 = createGuidelineFromTop(0.45f)
@@ -155,6 +155,14 @@ fun ConstraintLayoutScreen() {
                 top.linkTo(latestLessonsText.top)
                 end.linkTo(endGuideline)
             })
+        LessonCard(modifier = Modifier
+            .constrainAs (lessonCard){
+            top.linkTo(latestLessonsText.bottom, margin = 16.dp)
+            start.linkTo(latestLessonsText.start)
+            end.linkTo(endGuideline)
+            width = Dimension.fillToConstraints
+            height = Dimension.wrapContent
+        })
        }
     }
 
